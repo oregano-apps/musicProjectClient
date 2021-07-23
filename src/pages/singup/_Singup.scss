@@ -1,0 +1,39 @@
+.singup {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #7C83FD;
+}
+
+.singup_top{
+    flex: 2;
+}
+
+.singup_bottom{
+    background-color: white;
+    border-top-left-radius: 2.5rem;
+    border-top-right-radius: 2.5rem;
+    position: relative;
+    flex: 4;
+}
+
+.singup_card_one, .singup_card_two {
+    width: 100%;
+    border-top-left-radius: 2.5rem;
+    border-top-right-radius: 2.5rem;
+    position: absolute;
+    bottom: 0;
+}
+
+.singup_card_one{
+    height: 100%;
+    z-index: 2;
+}
+
+.singup_card_two{
+    width: 100%;
+    height: 85%;
+    z-index: 3;
+    background-color: brown;
+}
