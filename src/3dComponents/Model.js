@@ -5,6 +5,7 @@ import * as THREE from "three";
 
 function Model(props) {
   const model = useLoader(GLTFLoader, props.path);
+  console.log(props)
 
   let mixer;
   if (model.animations.length > 0) {
@@ -26,7 +27,7 @@ function Model(props) {
   useFrame((scene, delta) => {
     mixer?.update(delta);
   });
-  return <primitive object={model.scene} scale={props.scale}></primitive>;
+  return <primitive ref={props.refrence} object={model.scene} position={props.position} scale={props.scale}></primitive>;
 }
 
 export default Model;
