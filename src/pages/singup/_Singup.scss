@@ -1,39 +1,100 @@
 .singup {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #7C83FD;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-blue;
 }
 
-.singup_top{
-    flex: 2;
+.singup_top {
+  flex: 2;
+  display: grid;
+  place-items: center;
+
+  &_image {
+    width: 70%;
+    height: 70%;
+  }
 }
 
-.singup_bottom{
-    background-color: white;
-    border-top-left-radius: 2.5rem;
-    border-top-right-radius: 2.5rem;
-    position: relative;
-    flex: 4;
+#singup_button_back {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  color: white;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
 }
 
-.singup_card_one, .singup_card_two {
-    width: 100%;
-    border-top-left-radius: 2.5rem;
-    border-top-right-radius: 2.5rem;
-    position: absolute;
-    bottom: 0;
+.singup_bottom {
+  background-color: white;
+  border-top-left-radius: 2.5rem;
+  border-top-right-radius: 2.5rem;
+  position: relative;
+  flex: 4;
+  height: 100%;
+  overflow: hidden;
 }
 
-.singup_card_one{
-    height: 100%;
-    z-index: 2;
+.singup_card_one,
+.singup_card_two {
+  width: 100%;
+  border-top-left-radius: 2.5rem;
+  border-top-right-radius: 2.5rem;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 0 -0.5rem 2rem rgba(0, 0, 0, 0.2);
+  background-color: white;
 }
 
-.singup_card_two{
-    width: 100%;
-    height: 85%;
-    z-index: 3;
-    background-color: brown;
+.singup_card_one {
+  height: 100%;
+  z-index: 2;
+}
+
+.singup_title_part {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.singup_card_two {
+  width: 100%;
+  height: 85%;
+  z-index: 3;
+  transition: all 1s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.singup_form {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.singup_input {
+  border: none;
+}
+
+.singup_input_field {
+}
+
+.singup_already_user {
+  display: flex;
+  color: black;
+  font-size: 1.6rem;
+}
+
+.singup_already_user_bold {
+  color: $color-blue;
+  text-decoration: none;
+  margin-left: 0.5rem;
 }

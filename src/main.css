@@ -5,11 +5,11 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 html {
   font-size: 62.5%;
-  font-family: "Poppins", sans-serif;
 }
 
 .singup {
@@ -22,13 +22,29 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #7C83FD;
+  background-color: #2998ff;
 }
 
 .singup_top {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+.singup_top_image {
+  width: 70%;
+  height: 70%;
+}
+
+#singup_button_back {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  color: white;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
 }
 
 .singup_bottom {
@@ -39,14 +55,20 @@ html {
   -webkit-box-flex: 4;
       -ms-flex: 4;
           flex: 4;
+  height: 100%;
+  overflow: hidden;
 }
 
-.singup_card_one, .singup_card_two {
+.singup_card_one,
+.singup_card_two {
   width: 100%;
   border-top-left-radius: 2.5rem;
   border-top-right-radius: 2.5rem;
   position: absolute;
   bottom: 0;
+  -webkit-box-shadow: 0 -0.5rem 2rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 -0.5rem 2rem rgba(0, 0, 0, 0.2);
+  background-color: white;
 }
 
 .singup_card_one {
@@ -54,9 +76,70 @@ html {
   z-index: 2;
 }
 
+.singup_title_part {
+  width: 100%;
+  height: 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
 .singup_card_two {
   width: 100%;
   height: 85%;
   z-index: 3;
-  background-color: brown;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.singup_form {
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.singup_input {
+  border: none;
+}
+
+.singup_already_user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+  font-size: 1.6rem;
+}
+
+.singup_already_user_bold {
+  color: #2998ff;
+  text-decoration: none;
+  margin-left: 0.5rem;
 }
