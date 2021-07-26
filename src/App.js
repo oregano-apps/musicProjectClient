@@ -2,6 +2,7 @@ import "./App.css";
 import './main.css';
 import {Switch, BrowserRouter as Router, Link, Route} from 'react-router-dom'
 import Singup from './pages/singup/Singup'
+import Login from './pages/login/Login'
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
               <Singup />
           </Route>
           <Route path="/login">
-              <h1>login</h1>
+              <Login />
           </Route>
           <Route path="/homepage">
               <h1>homepage</h1>
