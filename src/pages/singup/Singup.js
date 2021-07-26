@@ -18,9 +18,9 @@ function Singup() {
   const pageTranslate = page * 40;
 
   const movePage = (e, number) => {
+    console.log('moving page')
     e.preventDefault();
     setPage(number);
-    console.log(number);
   };
 
   const handleSubmit = async (e) => {
@@ -49,15 +49,21 @@ function Singup() {
 
   return (
     <div class="singup">
-      <Canvas className="singup_top">
-        <MusicNoteManager />
-        <Light />
-        {/* {page == 1 ? (
+      {page == 1 ? (
           <ArrowBackIcon
             onClick={(e) => movePage(e, 0)}
             id="singup_button_back"
           />
-        ) : null} */}
+        ) : null}
+        <div className="singup_logo_circle"><img src="/images/ogerano.png" alt="" className="singup_logo_circle_img" /></div>
+      <Canvas className="singup_top">
+        <MusicNoteManager />
+        <MusicNoteManager />
+        <MusicNoteManager />
+        <MusicNoteManager />
+        <MusicNoteManager />
+        <Light />
+        
         {/* <img src="/images/test_image.svg" alt="" className="singup_top_image" /> */}
       </Canvas>
       <div className="singup_bottom">
@@ -88,10 +94,16 @@ function Singup() {
                 />
               </div>
             </div>
-            <button type="submit" className="singup_submit_button">
+            <button type="submit" style={{marginBottom: "2rem"}} className="singup_submit_button">
               Submit
             </button>
           </form>
+          <p className="singup_already_user">
+            Already have a user?
+            <Link to="/login" className="singup_already_user_bold">
+              click here!
+            </Link>
+          </p>
         </div>
 
         <div

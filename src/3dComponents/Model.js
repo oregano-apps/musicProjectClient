@@ -3,9 +3,18 @@ import { useLoader, useFrame } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import * as THREE from "three";
 
+
+// const Chair = () => {
+//   const { nodes } = useLoader(GLTFLoader, "../public/mindbreaker.glb");
+//   return (
+//     <mesh geometry={nodes.Cube.geometry}>
+//       <meshStandardMaterial attach="material" color="lightblue" />
+//     </mesh>
+//   );
+// };
 function Model(props) {
   const model = useLoader(GLTFLoader, props.path);
-  console.log(props)
+  console.log(props.refrence.current)
 
   let mixer;
   if (model.animations.length > 0) {
@@ -27,7 +36,8 @@ function Model(props) {
   useFrame((scene, delta) => {
     mixer?.update(delta);
   });
-  return <primitive ref={props.refrence} object={model.scene} position={props.position} scale={props.scale}></primitive>;
+
+  return <primitive ref={props.refrence} object={model.scene} position={props.position} scale={props.scale}></primitive>
 }
 
 export default Model;

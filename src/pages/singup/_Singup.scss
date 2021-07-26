@@ -10,7 +10,7 @@
 }
 
 .singup_top {
-  flex: 2;
+  flex: 3;
   display: grid;
   place-items: center;
 
@@ -27,6 +27,7 @@
   position: absolute;
   top: 1.5rem;
   left: 1.5rem;
+  z-index: 3;
 }
 
 .singup_bottom {
@@ -34,7 +35,7 @@
   border-top-left-radius: 2.5rem;
   border-top-right-radius: 2.5rem;
   position: relative;
-  flex: 4;
+  flex: 5;
   height: 100%;
   overflow: hidden;
 }
@@ -47,7 +48,11 @@
   position: absolute;
   bottom: 0;
   box-shadow: 0 -0.5rem 2rem rgba(0, 0, 0, 0.2);
-  background-color: white;
+  background-color: #f1f1ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .singup_card_one {
@@ -70,10 +75,7 @@
   height: 85%;
   z-index: 3;
   transition: all 1s;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+
 }
 
 .singup_form {
@@ -89,7 +91,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 30%;
+  height: 35%;
+  margin-top: 25%;
 }
 
 .singup_input {
@@ -98,12 +101,24 @@
   align-items: center;
   width: 100%;
   border-radius: 10rem;
-  padding: 0.5rem;
+  padding: 0.7rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.singup_input .MuiSvgIcon-root {
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.5rem;
 }
 
 .singup_input_field {
   border: none;
   background-color: inherit;
+  margin-left: 1rem;
+  font-size: 1.8rem;
+  width: 80%;
+  outline: none;
 }
 
 .singup_already_user {
@@ -124,4 +139,24 @@
   border-radius: 10rem;
   padding: 0.5rem 1rem;
   font-size: 1.6rem;
+}
+
+.singup_logo_circle{
+  border: 0.7rem solid white;
+  border-radius: 50%;
+  width: 14rem;
+  height: 14rem;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba($color-blue, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.singup_logo_circle_img{
+  width: 7rem;
+  height: 10.5rem;
 }

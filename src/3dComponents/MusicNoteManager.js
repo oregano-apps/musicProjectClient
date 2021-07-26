@@ -15,19 +15,19 @@ function MusicNoteManager() {
         return "/3dmodels/note-"+ number + ".glb"
 
     }
-    const generate_notes = () => {
-        for (let i = 0; i < 10; i++) {
-            notes.push(<MusicNote path={get_random_path()} position={[get_random_position(), get_random_position(), 0]} rotation={[1,1,1 ]} />) 
-        }
-    }
+    // const generate_notes = () => {
+    //     for (let i = 0; i < 10; i++) {
+    //         notes.push(<MusicNote path={get_random_path()} position={[get_random_position(), get_random_position(), 0]} rotation={[1,1,1 ]} />) 
+    //     }
+    // }
 
-    generate_notes()
-    console.log(notes)
+    // generate_notes()
+    // console.log(notes)
 
     
     return (
         <>
-        {notes}
+        <MusicNote path={get_random_path()} position={[get_random_position(), get_random_position(), 0]} rotation={[1,1,1]} />
            
         </>
     )
