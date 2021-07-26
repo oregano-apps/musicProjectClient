@@ -5,8 +5,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { Canvas } from "@react-three/fiber";
-import MusicNoteManager from './../../3dComponents/MusicNoteManager'
-import Light from './../../3dComponents/Light'
+import MusicNoteManager from "./../../3dComponents/MusicNoteManager";
+import Light from "./../../3dComponents/Light";
 
 function Singup() {
   const [page, setPage] = useState(0);
@@ -57,8 +57,8 @@ function Singup() {
             onClick={(e) => movePage(e, 0)}
             id="singup_button_back"
           />
-        ) : null}
-        <img src="/images/test_image.svg" alt="" className="singup_top_image" /> */}
+        ) : null} */}
+        {/* <img src="/images/test_image.svg" alt="" className="singup_top_image" /> */}
       </Canvas>
       <div className="singup_bottom">
         <div className="singup_card_one">

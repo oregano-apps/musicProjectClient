@@ -3,7 +3,10 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #131313;
+  background-image: url("image/singup-background.jpg");
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-color: #131313;
 }
 
 .singup_top {
@@ -74,17 +77,33 @@
 }
 
 .singup_form {
-  height: 50%;
+  height: 80%;
+  margin-top: 1rem;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+.singup_input_part {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 30%;
+}
+
 .singup_input {
-  border: none;
+  background-color: $color-blue;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 10rem;
+  padding: 0.5rem;
 }
 
 .singup_input_field {
+  border: none;
+  background-color: inherit;
 }
 
 .singup_already_user {
@@ -97,4 +116,12 @@
   color: $color-blue;
   text-decoration: none;
   margin-left: 0.5rem;
+}
+
+.singup_submit_button {
+  border: none;
+  background-color: $color-blue;
+  border-radius: 10rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.6rem;
 }

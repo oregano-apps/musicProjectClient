@@ -22,7 +22,7 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #131313;
+  background-image: url("image/singup-background.jpg");
 }
 
 .singup_top {
@@ -113,7 +113,9 @@ html {
 }
 
 .singup_form {
-  height: 50%;
+  height: 80%;
+  margin-top: 1rem;
+  width: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -126,8 +128,36 @@ html {
           justify-content: space-between;
 }
 
+.singup_input_part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 30%;
+}
+
 .singup_input {
+  background-color: #b3d9ff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  border-radius: 10rem;
+  padding: 0.5rem;
+}
+
+.singup_input_field {
   border: none;
+  background-color: inherit;
 }
 
 .singup_already_user {
@@ -139,7 +169,15 @@ html {
 }
 
 .singup_already_user_bold {
-  color: #2998ff;
+  color: #b3d9ff;
   text-decoration: none;
   margin-left: 0.5rem;
+}
+
+.singup_submit_button {
+  border: none;
+  background-color: #b3d9ff;
+  border-radius: 10rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.6rem;
 }
