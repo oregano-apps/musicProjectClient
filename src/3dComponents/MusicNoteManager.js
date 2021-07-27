@@ -11,7 +11,7 @@ function MusicNoteManager() {
     }
 
     const get_random_path = () => {
-        const number = Math.ceil(Math.random() * 3)
+        const number = Math.ceil(Math.random() * 12)
         return "/3dmodels/note-"+ number + ".glb"
 
     }
@@ -28,6 +28,18 @@ function MusicNoteManager() {
     return (
         <>
         <MusicNote path={get_random_path()} position={[get_random_position(), get_random_position(), 0]} rotation={[1,1,1]} />
+        {/* <MusicNote path={get_random_path()} position={[get_random_position(), get_random_position(), 0]} rotation={[1,1,1]} /> */}
+        {/* <MusicNote path={get_random_path()} position={[get_random_position(), get_random_position(), 0]} rotation={[1,1,1]} />
+        <MusicNote path={get_random_path()} position={[get_random_position(), get_random_position(), 0]} rotation={[1,1,1]} />
+        <MusicNote path={get_random_path()} position={[get_random_position(), get_random_position(), 0]} rotation={[1,1,1]} />
+        <MusicNote path={get_random_path()} position={[get_random_position(), get_random_position(), 0]} rotation={[1,1,1]} />
+        <MusicNote path={get_random_path()} position={[get_random_position(), get_random_position(), 0]} rotation={[1,1,1]} />
+        <MusicNote path={get_random_path()} position={[get_random_position(), get_random_position(), 0]} rotation={[1,1,1]} />
+        <MusicNote path={get_random_path()} position={[get_random_position(), get_random_position(), 0]} rotation={[1,1,1]} />
+        <MusicNote path={get_random_path()} position={[get_random_position(), get_random_position(), 0]} rotation={[1,1,1]} />
+        <MusicNote path={get_random_path()} position={[get_random_position(), get_random_position(), 0]} rotation={[1,1,1]} />
+        <MusicNote path={get_random_path()} position={[get_random_position(), get_random_position(), 0]} rotation={[1,1,1]} />
+        <MusicNote path={get_random_path()} position={[get_random_position(), get_random_position(), 0]} rotation={[1,1,1]} /> */}
            
         </>
     )

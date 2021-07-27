@@ -37,10 +37,11 @@ function Singup() {
 
       try {
         const res = await axios.post(
-          "http://localhost:11111/api/users/singup",
+          "http://localhost:8800/api/users/singup",
           user
         );
-        history.push("/login");
+        console.log(res.data)
+        // history.push("/login");
       } catch (err) {
         console.log(err);
       }
@@ -57,10 +58,6 @@ function Singup() {
         ) : null}
         <div className="singup_logo_circle"><img src="/images/ogerano.png" alt="" className="singup_logo_circle_img" /></div>
       <Canvas className="singup_top">
-        <MusicNoteManager />
-        <MusicNoteManager />
-        <MusicNoteManager />
-        <MusicNoteManager />
         <MusicNoteManager />
         <Light />
         

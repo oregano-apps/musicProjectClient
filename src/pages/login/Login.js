@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import { Person, Email, Lock } from "@material-ui/icons";
 import { useHistory } from "react-router";
 import axios from "axios";
@@ -7,6 +7,8 @@ import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { Canvas } from "@react-three/fiber";
 import MusicNoteManager from "./../../3dComponents/MusicNoteManager";
 import Light from "./../../3dComponents/Light";
+import { Context } from './../../context/Context'
+import { loginCall } from './../../utils/apiCalls'
 
 const AUTH_URL =
   "https://accounts.spotify.com/authorize?client_id=44ac6a7030a545d681e0ff5e34777f28&response_type=code&redirect_uri=http://localhost:3000&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state";
@@ -15,23 +17,18 @@ function Login() {
   const username = useRef();
   const password = useRef();
   const history = useHistory();
+
+  const { isFetching, dispatch } = useContext(Context);
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const user = {
-      username: username.current.value,
-      password: password.current.value,
-    };
+    const code = new URLSearchParams(window.location.search).get("code")
 
-    try {
-      const res = await axios.post(
-        "http://localhost:11111/api/users/login",
-        user
-      );
-      history.push(AUTH_URL);
-    } catch (err) {
-      console.log(err);
-    }
+    loginCall(
+      { username: username.current.value, password: password.current.value },
+      dispatch
+    )
   };
 
   return (
@@ -82,6 +79,7 @@ function Login() {
                   />
                 </div>
               </div>
+              <a href={AUTH_URL}>Connect to spotify</a>
               <button
                 type="submit"
                 style={{ marginBottom: "2rem" }}
@@ -92,16 +90,13 @@ function Login() {
             </form>
             <p className="singup_already_user">
               Don't have a user yet?
-              <Link to="/login" className="singup_already_user_bold">
+              <Link to="/singup" className="singup_already_user_bold">
                 click here!
               </Link>
             </p>
           </div>
         </div>
       </div>
-      <a className="btn btn-success btn-lg" href={"/"}>
-        Login With Spotify
-      </a>
     </div>
   );
 }

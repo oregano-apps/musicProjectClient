@@ -3,7 +3,8 @@ import Reducer from "./Reducers";
 
 const initiale_state = {
   user: JSON.parse(localStorage.getItem("oreganoUser")) || null,
-  token: JSON.parse(localStorage.getItem("oreganoToken")) || null,
+  token: localStorage.getItem("oreganoToken") || null,
+  spotifyToken: null,
   isFetching: false,
   error: false,
 };
@@ -14,7 +15,8 @@ export const ContextProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem("oreganoUser", JSON.stringify(state.user));
-    localStorage.setItem("oreganoToken", JSON.stringify(state.token));
+    localStorage.setItem("oreganoToken", state.token);
+    localStorage.setItem("spotifyToken", JSON.stringify(state.spotifyToken));
   }, [state.user, state.token]);
 
   return (
@@ -22,6 +24,7 @@ export const ContextProvider = ({ children }) => {
       value={{
         user: state.user,
         token: state.token,
+        spotifyToken: state.spotifyToken,
         isFetching: state.isFetching,
         error: state.error,
         dispatch,

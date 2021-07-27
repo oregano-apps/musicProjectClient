@@ -4,6 +4,8 @@ import {Switch, BrowserRouter as Router, Link, Route} from 'react-router-dom'
 import Singup from './pages/singup/Singup'
 import Login from './pages/login/Login'
 
+
+
 function App() {
   return (
     <div className="App">
