@@ -10,10 +10,10 @@ function MusicNote(props) {
 
   useFrame((state) => {
     if (note.current) {
-      if (note.current.position.y > 5) {
+      if (note.current.position.y > 7) {
         note.current.position.y = -7;
       }
-      note.current.position.y += 0.05;
+      note.current.position.y += 0.02;
     }
   });
   return (

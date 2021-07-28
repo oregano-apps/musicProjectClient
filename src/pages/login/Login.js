@@ -43,10 +43,6 @@ function Login() {
         </div>
         <Canvas className="singup_top">
           <MusicNoteManager />
-          <MusicNoteManager />
-          <MusicNoteManager />
-          <MusicNoteManager />
-          <MusicNoteManager />
           <Light />
 
           {/* <img src="/images/test_image.svg" alt="" className="singup_top_image" /> */}
