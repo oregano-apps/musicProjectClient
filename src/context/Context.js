@@ -4,7 +4,7 @@ import Reducer from "./Reducers";
 const initiale_state = {
   user: JSON.parse(localStorage.getItem("oreganoUser")) || null,
   token: localStorage.getItem("oreganoToken") || null,
-  spotifyToken: localStorage.getItem("spotifyToken") || null,
+  spotifyToken: null,
   isFetching: false,
   error: false,
 };

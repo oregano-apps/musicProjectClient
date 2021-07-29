@@ -1,0 +1,76 @@
+.topbar{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    height: 5rem;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.topbar_left, .topbar_middle, .topbar_right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.topbar_left {
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.topbar_logout_button{
+    border: none;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0, 0.4);
+    border-radius: 0.4rem;
+    font-family: $regular-font;
+    background-color: white;
+}
+
+.topbar_middle {
+    flex: 4;
+    justify-content: center;
+    
+}
+
+.topbar_title{
+    font-family: $header-font;
+    font-size: 2.5rem;
+    letter-spacing: .25rem; 
+}
+
+
+.topbar_left_circle{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.3rem solid white;
+    margin-right: 0.2rem;
+}
+
+
+.topbar_logo{
+    width: 50%;
+    height: 75%;
+    
+}
+
+.topbar_right {
+    flex: 1;
+}
+
+.topbar_user_image{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-size: cover;
+    margin-left: 1rem;
+}

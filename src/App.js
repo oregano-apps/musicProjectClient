@@ -1,18 +1,26 @@
 import "./App.css";
 import './main.css';
 import {Switch, BrowserRouter as Router, Link, Route} from 'react-router-dom'
+import {Context} from "./context/Context"
+import { useContext } from "react";
 import Singup from './pages/singup/Singup'
 import Login from './pages/login/Login'
+import SpotLogin from './pages/spotify_login/SpotifyLogin'
+import Homepage from "./pages/homepage/Homepage";
 
+const code = new URLSearchParams(window.location.search).get("code")
 
 
 function App() {
+
+  const {user, token} = useContext(Context)
+
   return (
     <div className="App">
       <Router>
         <Switch>
           <Route exact path="/">
-              <h1>homepage</h1>
+             {code && user && token ? <Homepage /> : <Login />}
           </Route>
           <Route path="/singup">
               <Singup />
@@ -20,8 +28,11 @@ function App() {
           <Route path="/login">
               <Login />
           </Route>
+          <Route path="/spotLogin">
+              {user && token ? <SpotLogin /> : <Login />}
+          </Route>
           <Route path="/homepage">
-              <h1>homepage</h1>
+              {code && user && token ? <Homepage /> : <Login />}
           </Route>
         </Switch>
       </Router>

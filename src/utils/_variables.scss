@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Changa+One&display=swap');
+
 
 // Dominate Color
 $color-black: #000;
@@ -9,7 +11,9 @@ $color-dark-gray: #323232;
 $color-secondary-light: #ffb900;
 $color-secondary-dark: #ff7730;
 
-$color-blue-light: #88fff7;
+$color-green-dark: #1DB954;
+
+$color-blue-light:  #6cdbeb;
 $color-blue: #b3d9ff;
 $color-blue-dark: #5643fa;
 
@@ -28,3 +32,4 @@ $color-white: #fff;
 
 // font
 $regular-font: "Poppins", sans-serif;
+$header-font: 'Changa One', cursive;

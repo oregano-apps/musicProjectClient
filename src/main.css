@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Changa+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Changa+One&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -198,7 +200,7 @@ html {
 }
 
 .singup_logo_circle {
-  border: 0.7rem solid white;
+  border: 0.6rem solid white;
   border-radius: 50%;
   width: 14rem;
   height: 14rem;
@@ -207,7 +209,10 @@ html {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  background-color: rgba(179, 217, 255, 0.4);
+  background-image: -webkit-gradient(linear, left bottom, right top, from(rgba(179, 217, 255, 0.7)), to(rgba(108, 219, 235, 0.4)));
+  background-image: linear-gradient(to right top, rgba(179, 217, 255, 0.7), rgba(108, 219, 235, 0.4));
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -223,4 +228,196 @@ html {
 .singup_logo_circle_img {
   width: 7rem;
   height: 10.5rem;
+}
+
+.spotLogin {
+  width: 100%;
+  height: 100vh;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#b3d9ff), to(#6cdbeb));
+  background-image: linear-gradient(to right bottom, #b3d9ff, #6cdbeb);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.spotLogin_main {
+  width: 75%;
+  height: 60vh;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.3)));
+  background-image: linear-gradient(to right top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  border-radius: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+  z-index: 2;
+}
+
+.spotLogin_title {
+  width: 90%;
+  height: 4rem;
+  font-size: 2.2rem;
+  margin-top: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: 3;
+  border-radius: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-backdrop-filter: blur(0.2rem);
+          backdrop-filter: blur(0.2rem);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.spotLogin_top, .spotLogin_bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.spotLogin_logo {
+  width: 75%;
+  height: 15rem;
+  margin-top: 4rem;
+}
+
+.spotLogin_button {
+  width: 75%;
+  height: 3rem;
+  font-size: 2rem;
+  border: none;
+  border-radius: 0.6rem;
+  background-color: #1DB954;
+  margin-bottom: 2rem;
+  -webkit-backdrop-filter: blur(0.3rem);
+          backdrop-filter: blur(0.3rem);
+  text-decoration: none;
+  color: black;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  height: 5rem;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.topbar_left, .topbar_middle, .topbar_right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.topbar_left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.topbar_logout_button {
+  border: none;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
+  border-radius: 0.4rem;
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+}
+
+.topbar_middle {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.topbar_title {
+  font-family: "Changa One", cursive;
+  font-size: 2.5rem;
+  letter-spacing: 0.25rem;
+}
+
+.topbar_left_circle {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 0.3rem solid white;
+  margin-right: 0.2rem;
+}
+
+.topbar_logo {
+  width: 50%;
+  height: 75%;
+}
+
+.topbar_right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.topbar_user_image {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-size: cover;
+  margin-left: 1rem;
 }

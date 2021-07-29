@@ -142,7 +142,7 @@
 }
 
 .singup_logo_circle {
-  border: 0.7rem solid white;
+  border: 0.6rem solid white;
   border-radius: 50%;
   width: 14rem;
   height: 14rem;
@@ -150,7 +150,8 @@
   top: 5%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba($color-blue, 0.4);
+  background-image: linear-gradient(to right top, rgba($color-blue, 0.7), rgba($color-blue-light, 0.4));
+  backdrop-filter: blur(.5rem);
   display: flex;
   justify-content: center;
   align-items: center;

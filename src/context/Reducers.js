@@ -28,6 +28,8 @@ const Reducer = (state, action) => {
     case "LOGOUT":
       return {
         user: null,
+        token: null,
+        spotifyToken: null,
         isFetching: false,
         error: false,
       };

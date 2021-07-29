@@ -10,9 +10,6 @@ import Light from "./../../3dComponents/Light";
 import { Context } from './../../context/Context'
 import { loginCall } from './../../utils/apiCalls'
 
-const AUTH_URL =
-  "https://accounts.spotify.com/authorize?client_id=44ac6a7030a545d681e0ff5e34777f28&response_type=code&redirect_uri=http://localhost:3000&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state";
-
 function Login() {
   const username = useRef();
   const password = useRef();
@@ -29,6 +26,7 @@ function Login() {
       { username: username.current.value, password: password.current.value },
       dispatch
     )
+    history.push('/spotLogin')
   };
 
   return (
@@ -75,7 +73,7 @@ function Login() {
                   />
                 </div>
               </div>
-              <a href={AUTH_URL}>Connect to spotify</a>
+              <a href="/spotLogin">Connect to spotify</a>
               <button
                 type="submit"
                 style={{ marginBottom: "2rem" }}
