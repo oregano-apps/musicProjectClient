@@ -1,6 +1,7 @@
 // Global Styles // 
 @import "utils/setting";
 @import "utils/variables";
+@import "utils/animations";
 
 
 // Pages //
@@ -9,4 +10,6 @@
 @import "pages/spotify_login/SpotifyLogin";
 
 // Components //
-@import "components/Topbar/Topbar"
+@import "components/titleSection/TitleSection";
+@import "components/Topbar/Topbar";
+@import "components/joinSection/JoinSection"

@@ -14,6 +14,47 @@ html {
   font-size: 62.5%;
 }
 
+@-webkit-keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    left: 0;
+  }
+  100% {
+    opacity: 1;
+    left: 50%;
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    left: 0;
+  }
+  100% {
+    opacity: 1;
+    left: 50%;
+  }
+}
+@-webkit-keyframes moveInRight {
+  0% {
+    opacity: 0;
+    left: 100%;
+  }
+  100% {
+    opacity: 1;
+    left: 50%;
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    left: 100%;
+  }
+  100% {
+    opacity: 1;
+    left: 50%;
+  }
+}
 .singup {
   width: 100%;
   height: 100vh;
@@ -322,6 +363,56 @@ html {
           backdrop-filter: blur(0.3rem);
   text-decoration: none;
   color: black;
+}
+
+.titleSection {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
+}
+
+.titleSection_img, .titleSection_background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.titleSection_background {
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 3;
+}
+
+.titleSection_mainTitle, .titleSection_subtitle {
+  left: 50%;
+  position: absolute;
+  font-family: "Changa One", cursive;
+  color: white;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.titleSection_mainTitle {
+  top: 30%;
+  font-size: 3rem;
+  letter-spacing: 0.25rem;
+  width: 100%;
+  -webkit-animation: moveInRight 2s;
+          animation: moveInRight 2s;
+}
+
+.titleSection_subtitle {
+  top: 43%;
+  width: 100%;
+  font-size: 2rem;
+  -webkit-animation: moveInLeft 2s;
+          animation: moveInLeft 2s;
 }
 
 .topbar {
