@@ -12,10 +12,18 @@ const Reducer = (state, action) => {
       return {
         user: action.payload.user,
         token: action.payload.token,
-        spotifyToken: action.payload.spotifyToken,
+        spotifyToken: null,
         isFetching: false,
         error: false,
       };
+    case "LOGIN_SPOTIFY":
+        return {
+          user: action.payload.user,
+          token: action.payload.token,
+          spotifyToken: action.payload.spotifyToken,
+          isFetching: false,
+          error: false,
+        };
     case "LOGIN_FAILURE":
       return {
         user: null,

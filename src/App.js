@@ -12,7 +12,6 @@ const code = new URLSearchParams(window.location.search).get("code")
 
 
 function App() {
-
   const {user, token} = useContext(Context)
 
   return (
@@ -20,7 +19,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-             {code && user && token ? <Homepage /> : <Login />}
+             {code && user && token ? <Homepage code={code} /> : <Login />}
           </Route>
           <Route path="/singup">
               <Singup />
@@ -32,7 +31,7 @@ function App() {
               {user && token ? <SpotLogin /> : <Login />}
           </Route>
           <Route path="/homepage">
-              {code && user && token ? <Homepage /> : <Login />}
+              {code && user && token ? <Homepage code={code} /> : <Login />}
           </Route>
         </Switch>
       </Router>

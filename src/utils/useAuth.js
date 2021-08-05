@@ -8,7 +8,7 @@ export default function useAuth(code) {
 
   useEffect(() => {
     axios
-      .post("http://localhost:8800/login", {
+      .post("http://localhost:8800/api/songs/spotifyLogin", {
         code,
       })
       .then(res => {
@@ -17,8 +17,9 @@ export default function useAuth(code) {
         setExpiresIn(res.data.expiresIn)
         window.history.pushState({}, null, "/login")
       })
-      .catch(() => {
+      .catch((err) => {
         // window.location = "/"
+        console.log(err)
       })
   }, [code])
 
@@ -26,7 +27,7 @@ export default function useAuth(code) {
     if (!refreshToken || !expiresIn) return
     const interval = setInterval(() => {
       axios
-        .post("http://localhost:8800/refresh", {
+        .post("http://localhost:8800/api/songs/refresh", {
           refreshToken,
         })
         .then(res => {

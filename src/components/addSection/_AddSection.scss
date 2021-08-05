@@ -1,0 +1,93 @@
+.addSection{
+    width: 100%;
+    height: 95vh;
+    background-color: black;
+    display: grid;
+    place-items: center;
+}
+
+.addSection_card{
+    background-color: white;
+    width: 80%;
+    border-radius: 4rem;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.addSection_top{
+    height: 6rem;
+    display: grid;
+    place-items: center;
+}
+
+.addSection_info{
+    position: absolute;
+    top: 1.6rem;
+    left: 2rem;
+    background-color: transparent;
+    width: 3rem !important;
+    height: 3rem !important;
+}
+
+.addSection_title{
+    font-family: $header-font;
+    font-size: 2.5rem;
+    letter-spacing: 0.3rem;
+
+}
+
+.addSection_bottom{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.addSection_inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.addSection_inputContainer{
+    position: relative;
+    margin: 1rem;
+
+}
+
+.addSection_input{
+    border: none;
+    outline: none;
+    font-size: 1.8rem;
+}
+
+.addSection_inputBorder{
+    position: absolute;
+    bottom: 0rem;
+    left: 0;
+    width: 100%;
+    height: .3rem;
+    background-color: gray;
+}
+
+.addSection_upload{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.addSection_uploadText{
+    font-size: 1.6rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+.addSection_uploadIcon{
+    width: 1.6rem !important;
+    height: 1.6rem !important;
+}
+

@@ -370,6 +370,7 @@ html {
   height: 50vh;
   position: relative;
   overflow: hidden;
+  z-index: 3;
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
           clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
 }
@@ -428,6 +429,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 999;
 }
 
 .topbar_left, .topbar_middle, .topbar_right {
@@ -511,4 +513,203 @@ html {
   border-radius: 50%;
   background-size: cover;
   margin-left: 1rem;
+}
+
+.miniSection {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  z-index: 3;
+}
+
+.miniSection_right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.miniSection_left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.miniSection_title {
+  font-size: 2rem;
+}
+
+.sectionGap {
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
+  margin-top: -30vh;
+}
+
+.addSection {
+  width: 100%;
+  height: 95vh;
+  background-color: black;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.addSection_card {
+  background-color: white;
+  width: 80%;
+  border-radius: 4rem;
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.addSection_top {
+  height: 6rem;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.addSection_info {
+  position: absolute;
+  top: 1.6rem;
+  left: 2rem;
+  background-color: transparent;
+  width: 3rem !important;
+  height: 3rem !important;
+}
+
+.addSection_title {
+  font-family: "Changa One", cursive;
+  font-size: 2.5rem;
+  letter-spacing: 0.3rem;
+}
+
+.addSection_bottom {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.addSection_inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.addSection_inputContainer {
+  position: relative;
+  margin: 1rem;
+}
+
+.addSection_input {
+  border: none;
+  outline: none;
+  font-size: 1.8rem;
+}
+
+.addSection_inputBorder {
+  position: absolute;
+  bottom: 0rem;
+  left: 0;
+  width: 100%;
+  height: 0.3rem;
+  background-color: gray;
+}
+
+.addSection_upload {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.addSection_uploadText {
+  font-size: 1.6rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.addSection_uploadIcon {
+  width: 1.6rem !important;
+  height: 1.6rem !important;
+}
+
+.firstButton_button {
+  border: none;
+  width: 16rem;
+  height: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  -webkit-box-shadow: 0rem 0.3rem 0.3rem rgba(0, 0, 0, 0.8);
+          box-shadow: 0rem 0.3rem 0.3rem rgba(0, 0, 0, 0.8);
+}
+
+.firstButton_buttonLeft {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  background-color: #ddd;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  border-bottom-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+.firstButton_buttonRight {
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+}
+
+.firstButton_buttonRightText {
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+}
+
+.firstButton_buttonIcon {
+  width: 2rem !important;
+  height: 2rem !important;
+  color: black !important;
 }

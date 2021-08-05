@@ -9,3 +9,7 @@ export const loginCall = async (userCredential, dispatch) => {
     dispatch({ type: "LOGIN_FAILURE", payload: err });
   }
 };
+
+export const spotifyLoginCall = async(spotifyToken, user, token, dispatch) => {
+  dispatch({ type: "LOGIN_SPOTIFY", payload: {spotifyToken, user, token} });
+}

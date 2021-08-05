@@ -1,0 +1,36 @@
+.firstButton_button {
+    border: none;
+    width: 16rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    box-shadow: 0rem 0.3rem 0.3rem rgba(0,0,0, 0.8);
+}
+
+.firstButton_buttonLeft{
+    flex: 2;
+    background-color: #ddd;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-bottom-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+}
+
+.firstButton_buttonRight{
+    flex: 5;
+}
+
+.firstButton_buttonRightText{
+    font-size: 1.6rem;
+    letter-spacing: 0.2rem;
+}
+
+.firstButton_buttonIcon{
+   width: 2rem !important;
+   height: 2rem !important;
+   color: black !important;
+}
