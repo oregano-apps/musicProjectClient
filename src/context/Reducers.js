@@ -4,7 +4,6 @@ const Reducer = (state, action) => {
       return {
         user: null,
         token: null,
-        spotifyToken: null,
         isFetching: true,
         error: false,
       };
@@ -12,15 +11,15 @@ const Reducer = (state, action) => {
       return {
         user: action.payload.user,
         token: action.payload.token,
-        spotifyToken: null,
         isFetching: false,
         error: false,
       };
     case "LOGIN_SPOTIFY":
+      console.log(action.payload)
         return {
-          user: action.payload.user,
-          token: action.payload.token,
           spotifyToken: action.payload.spotifyToken,
+          refreshToken: action.payload.refreshToken,
+          code: action.payload.code,
           isFetching: false,
           error: false,
         };
@@ -28,7 +27,6 @@ const Reducer = (state, action) => {
       return {
         user: null,
         token: null,
-        spotifyToken: null,
         isFetching: false,
         error: action.payload,
       };
@@ -37,7 +35,6 @@ const Reducer = (state, action) => {
       return {
         user: null,
         token: null,
-        spotifyToken: null,
         isFetching: false,
         error: false,
       };

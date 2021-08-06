@@ -4,7 +4,7 @@ import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import InfoIcon from '@material-ui/icons/Info';
 import FirstButton from '../firstButton/FirstButton';
 import SpotifyWebApi from "spotify-web-api-node"
-import {Context} from './../../context/Context'
+import {Context} from './../../context/spotifyContext'
 import axios from 'axios'
 import TrackSearchResult from '../../utils/TrackSearchResult';
 
@@ -13,28 +13,33 @@ const spotifyApi = new SpotifyWebApi({
   })
 
 function AddSection() {
-    const [songName, setSongName] = useState()
-    const [artistName, setArtistName] = useState()
+    // const songName = useRef()
+    const [songName, setSongName] = useState("")
+    const songNameRef = useRef()
+    const artistName = useRef()
     const [file, setFile] = useState(null)
     const [searchResults, setSearchResults] = useState([])
-    const {spotifyToken} = useContext(Context)
+    const {spotifyToken, refreshToken} = useContext(Context)
+    const [focus, setFocus] = useState(false);
+
+
 
 
     function chooseTrack(track) {
-     setSongName(track.name)
-     setArtistName(track.artistName)
+     setSongName(track.title)
+     artistName.current.value = track.artist
     }
 
     const addSongSubmit = (e) => {
         e.preventDefault()
 
-        if (!songName || !artistName || !file) {
+        if (!songName || !artistName.current.value || !file) {
             console.log('not ready to submit')
             return
         }
         let songInfo = {
-            songName: songName,
-            artist: artistName,
+            songName: songName.current.value,
+            artist: artistName.current.value,
         }
 
         const data = new FormData();
@@ -78,6 +83,7 @@ function AddSection() {
                 albumUrl: smallestAlbumImage.url,
               }
             })
+            
           )
         })
 
@@ -96,28 +102,29 @@ function AddSection() {
                 <form onSubmit={addSongSubmit} className="addSection_bottom">
                     <div className="addSection_inputs">
                         <div className="addSection_inputContainer">
-                            <input value={songName} onChange={(e) => {setSongName(e.target.value)}} placeholder="Song Name" type="text" className="addSection_input" />
-                            <span className="addSection_inputBorder"></span>
-                        </div>
-
-                        <div className="flex-grow-1 my-2" style={{ overflowY: "auto" }}>
-                            {searchResults.map(track => (
+                            <input ref={songNameRef} value={songName} onFocus={() => setFocus(true)} onChange={e => {setSongName(e.target.value)}} style={{zIndex: 9}} placeholder="Song Name" type="text" className="addSection_input" />
+                            <span style={{zIndex: 10}} className="addSection_inputBorder"></span>
+                            <div className="addSeaction_searchResults" onClick={() => setFocus(false)}>
+                            {focus && (songName.length > 0) ? searchResults.map(track => (
                               <TrackSearchResult
                                 track={track}
                                 key={track.uri}
                                 chooseTrack={chooseTrack}
                               />
-                            ))}
+                            )): null}
+                        </div>
                         </div>
 
+                        
+
                         <div className="addSection_inputContainer">
-                            <input value={artistName} onChange={(e) => {setArtistName(e.target.value)}} placeholder="Band / Artist" type="text" className="addSection_input" />
+                            <input ref={artistName} placeholder="Band / Artist" type="text" className="addSection_input" />
                             <span className="addSection_inputBorder"></span>
                         </div>
 
                         <label htmlFor="file" className="addSection_upload">
                             <MusicNoteIcon className="addSection_uploadIcon" />
-                            <span className="addSection_uploadText"> Upload Audio</span>
+                            <span className="addSection_uploadText">Upload Audio</span>
                             <MusicNoteIcon className="addSection_uploadIcon" />
                             <input
                                 style={{ display: "none" }}

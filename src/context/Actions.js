@@ -7,9 +7,9 @@ export const LoginSuccess = (user, token) => ({
   payload: { user: user, token: token },
 });
 
-export const LoginSpotify = (user, token, spotifyToken) => ({
+export const LoginSpotify = (spotifyToken, refreshToken) => ({
   type: "LOGIN_SPOTIFY",
-  payload: { user: user, token: token, spotifyToken: spotifyToken },
+  payload: {spotifyToken: spotifyToken, refreshToken: refreshToken },
 });
 
 export const LoginFailure = (error) => ({

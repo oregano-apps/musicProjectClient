@@ -63,6 +63,29 @@
     border: none;
     outline: none;
     font-size: 1.8rem;
+    position: relative;
+}
+
+.addSeaction_searchResults{
+    width: 100%;
+    position: absolute;
+    bottom: -13rem;
+    height: 13rem;
+    z-index: 12;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.addSection_searchResultItem{
+    width: 100%;
+    height: 4rem;
+    padding: .5rem;
+    display: flex;
+    background-color: black;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .addSection_inputBorder{

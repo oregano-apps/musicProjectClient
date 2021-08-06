@@ -6,16 +6,16 @@ import SectionGap from '../../components/sectionGap/SectionGap'
 import AddSection from '../../components/addSection/AddSection'
 import useAuth from '../../utils/useAuth'
 import {spotifyLoginCall} from './../../utils/apiCalls'
-import {Context} from './../../context/Context'
+import {Context} from './../../context/spotifyContext'
 
 function Homepage({code}) {
-    const spotifyToken = useAuth(code)
-    const { dispatch, user, token } = useContext(Context);
+    const [spotifyToken, refreshToken] = useAuth(code)
+    const { dispatch } = useContext(Context);
 
     useEffect(() => {
         if (!spotifyToken) return
-        spotifyLoginCall(spotifyToken,user, token,  dispatch)
-    }, [spotifyToken])
+        spotifyLoginCall(spotifyToken, refreshToken, code,  dispatch)
+    }, [spotifyToken, refreshToken])
 
     return (
         <div class="homepage">

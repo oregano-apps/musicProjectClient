@@ -15,7 +15,7 @@ export default function useAuth(code) {
         setAccessToken(res.data.accessToken)
         setRefreshToken(res.data.refreshToken)
         setExpiresIn(res.data.expiresIn)
-        window.history.pushState({}, null, "/login")
+        // window.history.pushState({}, null, "/")
       })
       .catch((err) => {
         // window.location = "/"
@@ -42,5 +42,5 @@ export default function useAuth(code) {
     return () => clearInterval(interval)
   }, [refreshToken, expiresIn])
 
-  return accessToken
+  return [accessToken, refreshToken]
 }
