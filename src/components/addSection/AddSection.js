@@ -30,7 +30,7 @@ function AddSection() {
      artistName.current.value = track.artist
     }
 
-    const addSongSubmit = (e) => {
+    const addSongSubmit = async (e) => {
         e.preventDefault()
 
         if (!songName || !artistName.current.value || !file) {
@@ -38,7 +38,7 @@ function AddSection() {
             return
         }
         let songInfo = {
-            songName: songName.current.value,
+            songName: songName, 
             artist: artistName.current.value,
         }
 
@@ -47,10 +47,10 @@ function AddSection() {
         data.append("name", audioName);
         data.append("file", file);
         songInfo.audio = audioName;
-        console.log(audioName)
 
-        axios.post("http://localhost:8800/api/songs/createSong", songInfo)
-        axios.post("http://localhost:8800/api/songs/uploadAudio", data)
+
+        await axios.post("http://localhost:8800/api/songs/uploadAudio", data)
+        await axios.post("http://localhost:8800/api/songs/createSong", songInfo)
     }
 
     useEffect(() => {
@@ -104,15 +104,16 @@ function AddSection() {
                         <div className="addSection_inputContainer">
                             <input ref={songNameRef} value={songName} onFocus={() => setFocus(true)} onChange={e => {setSongName(e.target.value)}} style={{zIndex: 9}} placeholder="Song Name" type="text" className="addSection_input" />
                             <span style={{zIndex: 10}} className="addSection_inputBorder"></span>
-                            <div className="addSeaction_searchResults" onClick={() => setFocus(false)}>
-                            {focus && (songName.length > 0) ? searchResults.map(track => (
+                            {focus && (songName.length > 0) ? <div className="addSeaction_searchResults" onClick={() => setFocus(false)}>
+                              {searchResults.map(track => (
                               <TrackSearchResult
                                 track={track}
                                 key={track.uri}
                                 chooseTrack={chooseTrack}
                               />
-                            )): null}
-                        </div>
+                              ))}     
+                              </div>
+                            : null}
                         </div>
 
                         
@@ -134,6 +135,7 @@ function AddSection() {
                                 onChange={(e) => setFile(e.target.files[0])}
                             />
                         </label>
+                        <p className="addSection_fileName">{file ? file.name : null}</p>
                     </div>
                    <FirstButton color="#000" colorTwo="#fff" text="Submit" icon={<CloudUploadIcon className="firstButton_buttonIcon" />} />
                 </form>

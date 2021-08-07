@@ -699,6 +699,12 @@ html {
   height: 1.6rem !important;
 }
 
+.addSection_fileName {
+  margin-top: 0.3rem;
+  font-size: 1.2rem;
+  color: gray;
+}
+
 .firstButton_button {
   border: none;
   width: 16rem;
