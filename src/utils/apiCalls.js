@@ -10,6 +10,10 @@ export const loginCall = async (userCredential, dispatch) => {
   }
 };
 
-export const spotifyLoginCall = async(spotifyToken, refreshToken, code, dispatch) => {
+export const spotifyLoginCall = async (spotifyToken, refreshToken, code, dispatch) => {
   dispatch({ type: "LOGIN_SPOTIFY", payload: {spotifyToken, refreshToken, code} });
+}
+
+export const addSongToPlaylistCall = async (song, dispatch) => {
+  dispatch({type: "ADD_TO_PLAYLIST", payload: song})
 }

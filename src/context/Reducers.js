@@ -15,7 +15,6 @@ const Reducer = (state, action) => {
         error: false,
       };
     case "LOGIN_SPOTIFY":
-      console.log(action.payload)
         return {
           spotifyToken: action.payload.spotifyToken,
           refreshToken: action.payload.refreshToken,
@@ -38,6 +37,12 @@ const Reducer = (state, action) => {
         isFetching: false,
         error: false,
       };
+    case "ADD_TO_PLAYLIST":
+      return {
+        playlist: [...state.playlist, action.payload],
+        isFetching: false,
+        error: false,
+      }
     default:
       return state;
   }

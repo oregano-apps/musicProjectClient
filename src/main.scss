@@ -8,13 +8,16 @@
 @import "pages/singup/Singup";
 @import "pages/homepage/Homepage";
 @import "pages/spotify_login/SpotifyLogin";
+@import "pages/musicPlayer/MusicPlayer";
 
 // Components //
 @import "components/titleSection/TitleSection";
 @import "components/Topbar/Topbar";
+@import "components/controlPanel/ControlPanel";
 @import "components/optionsSection/OptionSection";
 @import "components/miniSection/MiniSection";
 @import "components/sectionGap/SectionGap";
 @import "components/addSection/AddSection";
-
+@import "components/searchSong/SearchSong";
+@import "components/playlist/Playlist";
 @import "components/firstButton/FIrstButton";

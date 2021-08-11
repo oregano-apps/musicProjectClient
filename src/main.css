@@ -365,6 +365,86 @@ html {
   color: black;
 }
 
+.musicPlayerTitleSection {
+  width: 100%;
+  height: 88vh;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.9))), url("https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/38/04/dc/3804dc77-f2d7-1d6e-a99f-8b5dccfe4389/artwork.jpg/400x400cc.jpg");
+  background-image: linear-gradient(to right top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url("https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/38/04/dc/3804dc77-f2d7-1d6e-a99f-8b5dccfe4389/artwork.jpg/400x400cc.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.musicPlayerBackButton {
+  z-index: 6;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  color: white !important;
+  width: 2rem !important;
+  height: 2rem !important;
+}
+
+.musicPlayerSongImage {
+  width: 24rem;
+  height: 24rem;
+}
+
+.musicPlayerTitleSongInfo {
+  margin-top: 4rem;
+}
+
+.musicPlayerTitleSongName {
+  color: white;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.musicPlayerTitleArtistName {
+  color: #969696;
+  font-size: 1.4rem;
+}
+
+.musicPlayerProgressBarContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 15%;
+}
+
+.musicPlayerProgressBarText {
+  color: white;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.musicPlayerProgressBar {
+  width: 60vw;
+  height: 0.8rem;
+  border-radius: 100rem;
+  background-size: 300%;
+  background-position: center;
+  background-image: linear-gradient(-110deg, #464646 50%, #b3d9ff 50%);
+}
+
 .titleSection {
   width: 100%;
   height: 50vh;
@@ -513,6 +593,67 @@ html {
   border-radius: 50%;
   background-size: cover;
   margin-left: 1rem;
+}
+
+.controlPanel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1000;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.controlPanelRight, .controlPanelCenter, .controlPanelLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.controlPanelRight {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.controlPanelCenter {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+
+.controlPanelLeft {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.controlPanelPlayButton {
+  width: 5rem !important;
+  height: 5rem !important;
+  margin: 1.2rem;
+  border-radius: 50%;
+}
+
+.controlPanelIcon {
+  width: 3.5rem !important;
+  height: 3.5rem !important;
+}
+
+.controlPanelArrow {
+  width: 4rem !important;
+  height: 4rem !important;
 }
 
 .miniSection {
@@ -703,6 +844,228 @@ html {
   margin-top: 0.3rem;
   font-size: 1.2rem;
   color: gray;
+}
+
+.searchSong {
+  height: 100vh;
+  width: 100%;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/001/370/786/non_2x/wavy-soapy-hexagon-pattern-blue-abstract-background-free-vector.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.searchSongCard {
+  width: 75%;
+  height: 60vh;
+  border-radius: 2rem;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2)));
+  background-image: linear-gradient(to right top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+  -webkit-box-shadow: 0 0 0.3rem 0.6rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 0.3rem 0.6rem rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(0.2rem);
+          backdrop-filter: blur(0.2rem);
+  margin-top: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.searchSongTop, .searchSongBottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.searchSongTop {
+  margin-top: 12%;
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+
+.searchSongBottom {
+  -webkit-box-flex: 7;
+      -ms-flex: 7;
+          flex: 7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.searchSongSearchContainer {
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(0.2rem);
+          backdrop-filter: blur(0.2rem);
+  width: 80%;
+  height: 4rem;
+  border-radius: 100rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+
+.searchSongSearch {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin-left: 1rem;
+  font-size: 1.8rem;
+  font-family: "Changa One", cursive;
+  width: 70%;
+}
+
+.searchSongSearchIconPart {
+  width: 4rem;
+  height: 4rem;
+  background-color: #5643fa;
+  border-radius: 50%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.searchSongSearchIcon {
+  width: 2rem !important;
+  height: 2rem !important;
+}
+
+.searchSongRadioContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 70%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.searchSongRadioItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.searchSongRadioButton {
+  z-index: 2;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 0.3rem solid blue;
+  border-radius: 50%;
+}
+
+.searchSongRadio {
+  z-index: 5;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.searchSongRadio:checked + .searchSongRadioButton {
+  background-color: blue;
+}
+
+.searchSongRadioLabel {
+  font-size: 1.6rem;
+  margin-left: 1rem;
+  font-family: "Changa One", cursive;
+}
+
+.searchSongResultBottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.searchSongResultImage {
+  width: 10rem;
+  height: 10rem;
+}
+
+.searchSongResultButton {
+  width: 6rem;
+  height: 6rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.searchSongResultText {
+  font-size: 1.6rem;
+}
+
+.searchSongResultIcon {
+  width: 2rem !important;
+  height: 2rem !important;
+}
+
+.playlist {
+  height: 100vh;
 }
 
 .firstButton_button {

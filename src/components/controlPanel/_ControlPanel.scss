@@ -1,0 +1,44 @@
+.controlPanel{
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.controlPanelRight,.controlPanelCenter, .controlPanelLeft{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+
+.controlPanelRight{
+    flex: 1;
+}
+
+.controlPanelCenter{
+    flex: 3;
+}
+
+.controlPanelLeft{
+    flex: 1
+}
+
+.controlPanelPlayButton{
+    width: 5rem !important;
+    height: 5rem !important;
+    margin: 1.2rem;
+    border-radius: 50%;
+}
+
+.controlPanelIcon{
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+}
+
+.controlPanelArrow{
+    width: 4rem !important;
+    height: 4rem !important;
+}

@@ -21,3 +21,8 @@ export const Logout = (userId) => ({
   type: "LOGOUT",
   payload: userId,
 });
+
+export const AddToPlaylist = (song) => ({
+  type: "ADD_TO_PLAYLIST",
+  payload: song,
+})

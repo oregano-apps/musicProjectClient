@@ -4,7 +4,8 @@ import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import InfoIcon from '@material-ui/icons/Info';
 import FirstButton from '../firstButton/FirstButton';
 import SpotifyWebApi from "spotify-web-api-node"
-import {Context} from './../../context/spotifyContext'
+import {SpotifyContext} from './../../context/spotifyContext'
+import {Context} from './../../context/Context'
 import axios from 'axios'
 import TrackSearchResult from '../../utils/TrackSearchResult';
 
@@ -17,17 +18,44 @@ function AddSection() {
     const [songName, setSongName] = useState("")
     const songNameRef = useRef()
     const artistName = useRef()
+    const [songDuration, setSongDuration] = useState("")
+    const [songImage, setSongImage] = useState("")
     const [file, setFile] = useState(null)
     const [searchResults, setSearchResults] = useState([])
-    const {spotifyToken, refreshToken} = useContext(Context)
+    const {spotifyToken, refreshToken} = useContext(SpotifyContext)
+    const {user} = useContext(Context)
     const [focus, setFocus] = useState(false);
 
 
 
 
     function chooseTrack(track) {
-     setSongName(track.title)
-     artistName.current.value = track.artist
+      console.log("track 1", track)
+      setSongName(track.title)
+      artistName.current.value = track.artist
+      setSongDuration(track.duration)
+      console.log(track.duration)
+      setSongImage(track.albumUrl)
+    }
+
+    const get_smallest_image = (track) => {
+      const smallestAlbumImage = track.album.images.reduce(
+        (smallest, image) => {
+          if (image.height < smallest.height) return image
+          return smallest
+        },
+        track.album.images[0]
+      )
+      return smallestAlbumImage
+    }
+
+    const getDurationClear = (trackDuration) => {
+      let durationSeconds = trackDuration / 1000
+      let durationMinuts = Math.floor(durationSeconds / 60)
+      durationSeconds = Math.floor(durationSeconds - (durationMinuts * 60)).toString()
+      durationSeconds.length < 2 ? durationSeconds = '0' + durationSeconds : durationSeconds = durationSeconds
+      return `${durationMinuts}:${durationSeconds}`
+
     }
 
     const addSongSubmit = async (e) => {
@@ -37,9 +65,13 @@ function AddSection() {
             console.log('not ready to submit')
             return
         }
+        
         let songInfo = {
-            songName: songName, 
-            artist: artistName.current.value,
+          name: songName.toLowerCase(),
+          artist: artistName.current.value,
+          duration: songDuration,
+          backgroundPicture: songImage,
+          user: user._id
         }
 
         const data = new FormData();
@@ -68,19 +100,15 @@ function AddSection() {
           if (cancel) return
           setSearchResults(
             res.body.tracks.items.map(track => {
-              const smallestAlbumImage = track.album.images.reduce(
-                (smallest, image) => {
-                  if (image.height < smallest.height) return image
-                  return smallest
-                },
-                track.album.images[0]
-              )
+              console.log(track)
+              let smallestAlbumImage = get_smallest_image(track)
     
               return {
                 artist: track.artists[0].name,
                 title: track.name,
                 uri: track.uri,
                 albumUrl: smallestAlbumImage.url,
+                duration: getDurationClear(track.duration_ms)
               }
             })
             

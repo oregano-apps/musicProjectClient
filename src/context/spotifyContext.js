@@ -9,7 +9,7 @@ const initiale_state = {
   error: false,
 };
 
-export const Context = createContext(initiale_state);
+export const SpotifyContext = createContext(initiale_state);
 export const SpotifyContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(Reducer, initiale_state);
 
@@ -20,7 +20,7 @@ export const SpotifyContextProvider = ({ children }) => {
   }, [state.refreshToken, state.spotifyToken]);
 
   return (
-    <Context.Provider
+    <SpotifyContext.Provider
       value={{
         spotifyToken: state.spotifyToken,
         refreshToken: state.refreshToken,
@@ -31,6 +31,6 @@ export const SpotifyContextProvider = ({ children }) => {
       }}
     >
       {children}
-    </Context.Provider>
+    </SpotifyContext.Provider>
   );
 };

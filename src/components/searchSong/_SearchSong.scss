@@ -1,0 +1,172 @@
+.searchSong{
+    height: 100vh;
+    width: 100%;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/001/370/786/non_2x/wavy-soapy-hexagon-pattern-blue-abstract-background-free-vector.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+}
+
+.searchSongCard{
+    width: 75%;
+    height: 60vh;
+    border-radius: 2rem;
+    background-image: linear-gradient(to right top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+    box-shadow: 0 0 .3rem.6rem rgba(0,0,0,0.4);
+    backdrop-filter: blur(0.2rem);
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.searchSongTop, .searchSongBottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.searchSongTop{
+    margin-top: 12%;
+    flex: 3;
+}
+
+.searchSongBottom {
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.searchSongSearchContainer{
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(0.2rem);
+    width: 80%;
+    height: 4rem;
+    border-radius: 100rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+}
+
+.searchSongSearch{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-left: 1rem;
+    font-size: 1.8rem;
+    font-family: $header-font;
+    width: 70%;
+}
+
+.searchSongSearchIconPart{
+    width: 4rem;
+    height: 4rem;
+    background-color: $color-blue-dark;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.searchSongSearchIcon{
+    width: 2rem !important;
+    height: 2rem !important;
+
+}
+
+.searchSongRadioContainer{
+    display: flex;
+    align-items: center;
+    width: 70%;
+    justify-content: space-between;
+}
+
+.searchSongRadioItem{
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+}
+
+.searchSongRadioButton{
+    z-index: 2;
+    width: 1.6rem;
+    height: 1.6rem;
+    border: .3rem solid blue;
+    border-radius: 50%;
+
+}
+
+.searchSongRadio{
+    z-index: 5;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+
+}
+
+.searchSongRadio:checked + .searchSongRadioButton{
+    background-color: blue;
+}
+
+.searchSongRadioLabel{
+    font-size: 1.6rem;
+    margin-left: 1rem;
+    font-family: $header-font;
+}
+
+.searchSongResultTop{
+
+}
+
+.searchSongResultBottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.searchSongResultImage{
+    width: 10rem;
+    height: 10rem;
+}
+
+.searchSongResultInfo{
+
+}
+
+.searchSongResultName{
+
+}
+
+.searchSongResultArtist{
+
+}
+
+.searchSongResultButton{
+    width: 6rem;
+    height: 6rem;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchSongResultText{
+    font-size: 1.6rem;
+}
+
+.searchSongResultIcon{
+    width: 2rem !important;
+    height: 2rem !important;
+}

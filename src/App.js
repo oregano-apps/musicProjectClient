@@ -7,6 +7,7 @@ import Singup from './pages/singup/Singup'
 import Login from './pages/login/Login'
 import SpotLogin from './pages/spotify_login/SpotifyLogin'
 import Homepage from "./pages/homepage/Homepage";
+import MusicPlayer from "./pages/musicPlayer/MusicPlayer";
 
 const code = new URLSearchParams(window.location.search).get("code")
 
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path="/spotLogin">
               {user && token ? <SpotLogin /> : <Login />}
+          </Route>
+          <Route path="/musicPlayer">
+              {user && token ? <MusicPlayer /> : <Login />}
           </Route>
           <Route path="/homepage">
               {code && user && token ? <Homepage code={code} /> : <Login />}
