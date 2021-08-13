@@ -2,7 +2,7 @@ import { createContext, useReducer, useEffect } from "react";
 import Reducer from "./Reducers";
 
 const initiale_state = {
-  playlist: JSON.parse(localStorage.getItem("playlist")) || [],
+  playlist: JSON.parse(sessionStorage.getItem("playlist")) || [],
   isFetching: false,
   error: false,
 };
@@ -12,7 +12,7 @@ export const PlaylistContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(Reducer, initiale_state);
 
   useEffect(() => {
-    localStorage.setItem("playlist", JSON.stringify(state.playlist));
+    sessionStorage.setItem("playlist", JSON.stringify(state.playlist));
   }, [state.playlist]);
 
   return (

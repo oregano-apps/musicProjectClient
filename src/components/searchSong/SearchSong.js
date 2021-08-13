@@ -43,6 +43,7 @@ function SearchSong() {
     const resetSearching = () => {
         setSearchResults([])
         setSearchValue('')
+        setResultCursor(0)
     }
 
     const nextSearch = () => {
@@ -56,6 +57,7 @@ function SearchSong() {
     const addToPlaylist = () => {
         if (playlist.filter(song => song.name === searchResults[resultCursor].name).length > 0) {
             console.log('the song is already in the playlist')
+            resetSearching()
             return
         }
         addSongToPlaylistCall(searchResults[resultCursor], dispatch)

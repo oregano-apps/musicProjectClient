@@ -10,7 +10,7 @@ import SkipNextIcon from '@material-ui/icons/SkipNext';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import ShuffleIcon from '@material-ui/icons/Shuffle';
 
-function ControlPanel({height, backgroundColor}) {
+function ControlPanel({height, backgroundColor, startFunction, play}) {
     return (
         <div style={{height: height, backgroundColor:backgroundColor}} className="controlPanel">
             <div className="controlPanelRight">
@@ -18,7 +18,7 @@ function ControlPanel({height, backgroundColor}) {
             </div>
             <div className="controlPanelCenter">
                 <SkipPreviousIcon className="controlPanelArrow" />
-                <PlayArrowIcon className="controlPanelPlayButton" />
+                {play ? <PauseIcon onClick={startFunction} className="controlPanelPlayButton" /> : <PlayArrowIcon onClick={startFunction} className="controlPanelPlayButton" />}
                 <SkipNextIcon className="controlPanelArrow" />
             </div>
             <div className="controlPanelLeft">

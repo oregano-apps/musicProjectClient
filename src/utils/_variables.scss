@@ -8,14 +8,19 @@ $color-black-2: #212121;
 $color-dark-gray: #323232;
 
 // COLORS
-$color-secondary-light: #ffb900;
+$color-secondary-light: #A8A35D;
 $color-secondary-dark: #ff7730;
 
 $color-green-dark: #1DB954;
 
+$color-purple-1: #6F5BA7;
+$color-purple-2: #E0B6CA;
+
 $color-blue-light:  #6cdbeb;
 $color-blue: #b3d9ff;
 $color-blue-dark: #5643fa;
+
+$guf-color: #03396c;
 
 $color-grey-light-1: #f7f7f7;
 $color-grey-light-2: #eee;
@@ -33,3 +38,7 @@ $color-white: #fff;
 // font
 $regular-font: "Poppins", sans-serif;
 $header-font: 'Changa One', cursive;
+
+
+// linear gradients
+$purple-gradient: linear-gradient(to right bottom, $color-purple-1, $color-purple-2 95%);

@@ -21,7 +21,7 @@ function Homepage({code}) {
         <div class="homepage">
             <Topbar />
             <TitleSection />
-            <SectionGap color="#000" width="100%" height="50vh" />
+            <SectionGap color="#b3d9ff" width="100%" height="50vh" />
             <OptionSection />
             <AddSection />
         </div>

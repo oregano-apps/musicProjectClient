@@ -165,7 +165,7 @@ function AddSection() {
                         </label>
                         <p className="addSection_fileName">{file ? file.name : null}</p>
                     </div>
-                   <FirstButton color="#000" colorTwo="#fff" text="Submit" icon={<CloudUploadIcon className="firstButton_buttonIcon" />} />
+                   <FirstButton color="#6F5BA7" colorTwo="#fff" text="Submit" icon={<CloudUploadIcon style={{color: "#b3d9ff"}} className="firstButton_buttonIcon" />} />
                 </form>
             </div>
             

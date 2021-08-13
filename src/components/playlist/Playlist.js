@@ -1,11 +1,21 @@
-import React, {Suspense } from 'react'
+import React, {Suspense, useContext } from 'react'
 import { Canvas, useFrame } from "@react-three/fiber";
 import PlaylistCard from '../../3dComponents/PlaylistCard/PlaylistCard'
 import Orbit from './../../3dComponents/OrbitControls'
 import CameraControls from '../../3dComponents/CameraControls';
 import Header from '../../3dComponents/Header'
+import {PlaylistContext} from './../../context/playlistContext' 
 function Playlist() {
 
+    const {playlist, dispatch} = useContext(PlaylistContext)
+
+    const renderPlaylist = () => {
+        return (
+            <>
+                
+            </>
+        )
+    }
 
     return (
         <div className="playlist">
@@ -19,6 +29,9 @@ function Playlist() {
                 <Suspense fallback={null}>
                     <Header hAlign="center" position={[-1, 2.2, 0]} children="PLAYLIST" />
                 </Suspense>
+                (
+                    renderPlaylist
+                )
             </Canvas>
         </div>
     )
