@@ -61,5 +61,6 @@
     height: .8rem;
     border-radius: 100rem;
     background-size: 300%;
+    transition: 0.2s all;
     background-image: linear-gradient(-110deg, $color-blue 50%,rgb(70,70,70) 50% );
 }

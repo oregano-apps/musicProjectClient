@@ -55,7 +55,6 @@ function AddSection() {
       durationSeconds = Math.floor(durationSeconds - (durationMinuts * 60)).toString()
       durationSeconds.length < 2 ? durationSeconds = '0' + durationSeconds : durationSeconds = durationSeconds
       return `${durationMinuts}:${durationSeconds}`
-
     }
 
     const addSongSubmit = async (e) => {
@@ -75,13 +74,13 @@ function AddSection() {
         }
 
         const data = new FormData();
-        const audioName = Date.now() + file.name;
-        data.append("name", audioName);
         data.append("file", file);
-        songInfo.audio = audioName;
+        
 
 
-        await axios.post("http://localhost:8800/api/songs/uploadAudio", data)
+        const audioName = await axios.post("http://localhost:8800/api/songs/uploadAudio", data)
+        console.log(audioName.data)
+        songInfo.audio = audioName.data;
         await axios.post("http://localhost:8800/api/songs/createSong", songInfo)
     }
 

@@ -17,7 +17,7 @@ export const SpotifyContextProvider = ({ children }) => {
     localStorage.setItem("spotifyToken", state.spotifyToken);
     localStorage.setItem("refreshToken", state.refreshToken);
     localStorage.setItem("spotifyCode", state.code);
-  }, [state.refreshToken, state.spotifyToken]);
+  }, [state.refreshToken, state.spotifyToken, state.code]);
 
   return (
     <SpotifyContext.Provider

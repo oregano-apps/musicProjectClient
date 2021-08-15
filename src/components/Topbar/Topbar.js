@@ -7,7 +7,7 @@ function Topbar() {
     return (
         <div class="topbar">
                 <div className="topbar_left">
-                    <img src="http://localhost:8800/api/songs/getAudio/9a639aee6d83fcbecce0884fa5956fb0" alt="" className="topbar_user_image" />
+                    <img src="/images/noAvatar.png" alt="" className="topbar_user_image" />
                 </div>
                 <div className="topbar_middle">
                     <div className="topbar_left_circle">

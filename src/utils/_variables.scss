@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Changa+One&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&display=swap');
 
 // Dominate Color
 $color-black: #000;
@@ -42,3 +42,4 @@ $header-font: 'Changa One', cursive;
 
 // linear gradients
 $purple-gradient: linear-gradient(to right bottom, $color-purple-1, $color-purple-2 95%);
+$gray-gradient: linear-gradient(to bottom, rgb(51,56,61), rgb(20,22,27))

@@ -1,0 +1,32 @@
+.popup{
+    width: 70%;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 1rem;
+    position: fixed;
+    top: -4%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    box-shadow: 0.2rem 0.3rem 0.2rem 0.1rem rgba(0,0,0, 0.6);
+    z-index: 999;
+    transition: all .4s;
+}
+
+.popupActive {
+    opacity: 1;
+    top: 2%;
+}
+
+.popupText{
+    font-size: 1.4rem;
+}
+
+.popupIcon{
+    width: 2rem !important;
+    height: 2rem !important;
+    margin: .2rem;
+    margin-right: 1rem;
+}
