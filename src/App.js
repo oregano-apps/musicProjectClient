@@ -8,6 +8,7 @@ import Login from './pages/login/Login'
 import SpotLogin from './pages/spotify_login/SpotifyLogin'
 import Homepage from "./pages/homepage/Homepage";
 import MusicPlayer from "./pages/musicPlayer/MusicPlayer";
+import OpenParty from './pages/openParty/OpenParty'
 
 const code = new URLSearchParams(window.location.search).get("code")
 
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route path="/musicPlayer">
               {user && token ? <MusicPlayer /> : <Login />}
+          </Route>
+          <Route path="/openParty">
+              {user && token ? <OpenParty /> : <Login />}
           </Route>
           <Route path="/homepage">
               {code && user && token ? <Homepage code={code} /> : <Login />}

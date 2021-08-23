@@ -1,0 +1,198 @@
+.openParty{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.openPartyContainer-fluid{
+    height: 100%;
+    width: 100%;
+    background: #FFF;
+    position: absolute;
+    z-index: -1;
+  }
+  /* ============= Animation background ========= */
+  .openPartyBackground {
+    background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  .openPartyCube {
+    position: absolute;
+    top: 80vh;
+    left: 45vw;
+    width: 10px;
+    height: 10px;
+    border: solid 1px #D7D4E4;
+    transform-origin: top left;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    animation: cube 12s ease-in forwards infinite;
+  }
+  .openPartyCube:nth-child(2n) {
+    border-color: #FFF ;
+  }
+  .openPartyCube:nth-child(2) {
+    animation-delay: 2s;
+    left: 25vw;
+    top: 40vh;
+  }
+  .openPartyCube:nth-child(3) {
+    animation-delay: 4s;
+    left: 75vw;
+    top: 50vh;
+  }
+  .openPartyCube:nth-child(4) {
+    animation-delay: 6s;
+    left: 90vw;
+    top: 10vh;
+  }
+  .openPartyCube:nth-child(5) {
+    animation-delay: 8s;
+    left: 10vw;
+    top: 85vh;
+  }
+  .openPartyCube:nth-child(6) {
+    animation-delay: 10s;
+    left: 50vw;
+    top: 10vh;
+  }
+
+  /* Animate Background*/
+  @keyframes Gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes cube {
+    from {
+      transform: scale(0) rotate(0deg) translate(-50%, -50%);
+      opacity: 1;
+    }
+    to {
+      transform: scale(20) rotate(960deg) translate(-50%, -50%);
+      opacity: 0;
+    }
+  }
+
+.openPartyTop {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 2;
+}
+
+.openPartyTitleContainer{
+    display: flex;
+    align-items: center;
+    
+}
+
+.openPartyTitle{
+    color: white;
+    font-size: 3rem;
+}
+
+.openPartyCode{
+    color: white;
+    font-size: 2rem;
+}
+
+.openPartyIcon{
+    margin-left: 0.5rem;
+    color: white !important;
+    height: 2.5rem !important;
+    width: 2.5rem !important;
+}
+
+.openPartyTitleInput{
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-size: 1.6rem;
+  border-bottom: 0.1rem solid white;
+  border-top: 0.1rem solid white;
+  width: 18rem;
+  margin-right: 1rem;
+}
+
+.openPartyTitleSubmit{
+    background-color: white;
+    border-radius: 100rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    box-shadow: 0.2rem 0.4rem 1rem rgba(0,0,0, 0.4);
+}
+
+.openPartyMiddle{
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.openPartyMiddleTitle{
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: white;
+  font-family: 'Nunito', sans-serif !important;
+  letter-spacing: 0.2rem;
+}
+
+.openPartyUsers{
+  display: grid;
+  grid-template-columns: 49% 49%;
+  row-gap: 2rem;
+  place-items: center;
+}
+
+.openPartyItemContainer{
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  width: 15rem;
+  background-color: #dae6de;
+  padding :1rem;
+  border-radius: 1rem;
+}
+
+.openPartyItemImg{
+  width: 3rem !important;
+  height: 3rem !important;
+  flex: 2;
+}
+
+.openPartyItemImg{
+
+}
+
+.openPartyItemTrash{
+  width: 2rem !important;
+  height: 2rem !important;
+  flex: 2;
+}
+
+.openPartyItemName{
+  margin: 1rem;
+  font-size: 1.2rem;
+  font-family: 'Nunito', sans-serif !important;
+  flex: 5;
+}
+
+.openPartyBottom{
+    flex: 2;
+    display: grid;
+    place-items: center;
+}

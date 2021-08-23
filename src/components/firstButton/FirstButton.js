@@ -2,7 +2,7 @@ import React from 'react'
 
 function FirstButton({color, colorTwo, text, icon, func}) {
     return (
-        <div>
+        <div onClick={func ? func : null}>
              <button style={{backgroundColor: color, color: colorTwo}} type="submit" className="firstButton_button">
                 <div style={{backgroundColor: colorTwo, color: color}} className="firstButton_buttonLeft">
                     {icon}

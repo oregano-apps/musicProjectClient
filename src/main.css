@@ -446,6 +446,286 @@ html {
   background-image: linear-gradient(-110deg, #b3d9ff 50%, #464646 50%);
 }
 
+.openParty {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.openPartyContainer-fluid {
+  height: 100%;
+  width: 100%;
+  background: #FFF;
+  position: absolute;
+  z-index: -1;
+}
+
+/* ============= Animation background ========= */
+.openPartyBackground {
+  background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+          animation: Gradient 15s ease infinite;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.openPartyCube {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #D7D4E4;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+          transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  -webkit-animation: cube 12s ease-in forwards infinite;
+          animation: cube 12s ease-in forwards infinite;
+}
+
+.openPartyCube:nth-child(2n) {
+  border-color: #FFF;
+}
+
+.openPartyCube:nth-child(2) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  left: 25vw;
+  top: 40vh;
+}
+
+.openPartyCube:nth-child(3) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  left: 75vw;
+  top: 50vh;
+}
+
+.openPartyCube:nth-child(4) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+
+.openPartyCube:nth-child(5) {
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+
+.openPartyCube:nth-child(6) {
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+  left: 50vw;
+  top: 10vh;
+}
+
+/* Animate Background*/
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-webkit-keyframes cube {
+  from {
+    -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+            transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(20) rotate(960deg) translate(-50%, -50%);
+            transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+@keyframes cube {
+  from {
+    -webkit-transform: scale(0) rotate(0deg) translate(-50%, -50%);
+            transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(20) rotate(960deg) translate(-50%, -50%);
+            transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+.openPartyTop {
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.openPartyTitleContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.openPartyTitle {
+  color: white;
+  font-size: 3rem;
+}
+
+.openPartyCode {
+  color: white;
+  font-size: 2rem;
+}
+
+.openPartyIcon {
+  margin-left: 0.5rem;
+  color: white !important;
+  height: 2.5rem !important;
+  width: 2.5rem !important;
+}
+
+.openPartyTitleInput {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-size: 1.6rem;
+  border-bottom: 0.1rem solid white;
+  border-top: 0.1rem solid white;
+  width: 18rem;
+  margin-right: 1rem;
+}
+
+.openPartyTitleSubmit {
+  background-color: white;
+  border-radius: 100rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  -webkit-box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+.openPartyMiddle {
+  -webkit-box-flex: 7;
+      -ms-flex: 7;
+          flex: 7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.openPartyMiddleTitle {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: white;
+  font-family: "Nunito", sans-serif !important;
+  letter-spacing: 0.2rem;
+}
+
+.openPartyUsers {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 49% 49%;
+  grid-template-columns: 49% 49%;
+  row-gap: 2rem;
+  place-items: center;
+}
+
+.openPartyItemContainer {
+  height: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 15rem;
+  background-color: #dae6de;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.openPartyItemImg {
+  width: 3rem !important;
+  height: 3rem !important;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.openPartyItemTrash {
+  width: 2rem !important;
+  height: 2rem !important;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.openPartyItemName {
+  margin: 1rem;
+  font-size: 1.2rem;
+  font-family: "Nunito", sans-serif !important;
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+}
+
+.openPartyBottom {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
 .titleSection {
   width: 100%;
   height: 50vh;
@@ -1204,9 +1484,6 @@ html {
   -webkit-transition: all 1s ease-out;
   transition: all 1s ease-out;
 }
-.playlistItemActive {
-  background-color: violet;
-}
 .playlistItemTrashButton {
   width: 3rem;
   height: 3rem;
@@ -1336,7 +1613,7 @@ html {
 .firstButton_buttonIcon {
   width: 2rem !important;
   height: 2rem !important;
-  color: black !important;
+  color: black;
 }
 
 .popup {
