@@ -1,0 +1,40 @@
+.join_party {
+    display: grid;
+    align-items: center;
+}
+
+.join_party_container{
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    width: 60vw;
+    border-radius: 2rem;
+    box-shadow: 0 0.3rem 0.6rem rgba(0,0,0, 0.4);
+    background-color: antiquewhite;
+}
+
+.join_party_container_top{
+    flex: 0.2;
+}
+
+.join_party_title{
+    color: $color-blue;
+    font-size: 3rem;
+}
+
+.join_party_container_middle{
+    flex: 0.6;
+}
+
+.join_party_code_input{
+    width: 50%;
+    height: 3rem;
+    font-family: 'Nunito', sans-serif !important;
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+    border-radius: 1rem;
+}
+
+.join_party_container_bottom{
+    flex: 0.2;
+}

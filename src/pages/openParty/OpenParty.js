@@ -6,6 +6,7 @@ import FirstButton from './../../components/firstButton/FirstButton'
 import AlbumIcon from '@material-ui/icons/Album';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Avatar } from '@material-ui/core';
+import socketFunctions from './../../utils/socketFunctions'
 
 function OpenParty() {
     const socket = useRef();
@@ -14,30 +15,44 @@ function OpenParty() {
     const [edit, setEdit] = useState(false)
     const [title, setTitle] = useState('Oregano Room')
     const [code, setCode] = useState('00000000')
-    const [avatarSeed, setAvatarSeed] = useState('')
-    const [connectedUser, setConnectedUsers] = useState([{name: 'almog674', seed: avatarSeed}, {name: 'roee90', seed: avatarSeed / 2}])
+    const avatarSeed = useRef(null)
+    const [connectedUser, setConnectedUsers] = useState([])
 
-    const changeRoomName = () => {
-        socket.current.emit('changeRoomName', {title, code})
-        socket.current.on('newRoomData', newData => {
-            setCode(newData.code)
-            setTitle(newData.title)
-        })
+    const changeRoomName = async () => {
+        console.log(code)
+        socket.current.emit('changeRoomName', {title: title, code: code})
         setEdit(false)
     }
 
-    useEffect(() => {
-        setAvatarSeed(Math.floor(Math.random() * 5000))
-    }, [])
+    const getAvatarSeed = () => {
+        avatarSeed.current = (Math.floor(Math.random() * 5000))
+    }
+
 
 
     useEffect(() => {
         const openParty = async () => {
             socket.current = io("ws://localhost:8900");
-            socket.current.emit('openParty', user.username)
+            // When open the party
+            getAvatarSeed()
+            socket.current.emit('openParty', {username: user.username, avatarSeed: avatarSeed.current})
+
+            // Asking for out user data
             await socket.current.emit('requestForUserData', user.username)
+
+            // When the server sends the user data
             socket.current.on('getUserData', socketData => setSocketUser(socketData))
+
+            // When the server sends the room data
+            socket.current.on('newRoomData', newData => socketFunctions.getNewRoomData(newData, setCode, setTitle))
+
+            // When someone joins the party
+            socket.current.on('userJoinedTheParty', user => socketFunctions.userJoinedTheParty(user, connectedUser, setConnectedUsers))
+
+            // When someone left the party
+            socket.current.on('userLeftTheParty')
         }
+        
         openParty()    
     }, [])
 
@@ -49,7 +64,7 @@ function OpenParty() {
     }, [socketUser])
 
     const startParty = () => {
-        console.log('almog')
+        socket.current.emit('startParty', code)
     }
 
     return (
@@ -89,8 +104,8 @@ function OpenParty() {
                     {
                         connectedUser.map(userInfo => (
                                 <div className="openPartyItemContainer">
-                                <Avatar src={`https://avatars.dicebear.com/api/human/${userInfo.seed}.svg`} alt="" className="openPartyItemImg" />
-                                <span className="openPartyItemName">{userInfo.name}</span>
+                                <Avatar src={`https://avatars.dicebear.com/api/human/${userInfo.avatarSeed}.svg`} alt="" className="openPartyItemImg" />
+                                <span className="openPartyItemName">{userInfo.username}</span>
                                 <DeleteIcon className="openPartyItemTrash" />
                             </div>
                         ))

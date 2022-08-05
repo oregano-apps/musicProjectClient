@@ -9,6 +9,7 @@ import SpotLogin from './pages/spotify_login/SpotifyLogin'
 import Homepage from "./pages/homepage/Homepage";
 import MusicPlayer from "./pages/musicPlayer/MusicPlayer";
 import OpenParty from './pages/openParty/OpenParty'
+import JoinParty from "./pages/joinParty/joinParty";
 
 const code = new URLSearchParams(window.location.search).get("code")
 
@@ -38,8 +39,14 @@ function App() {
           <Route path="/openParty">
               {user && token ? <OpenParty /> : <Login />}
           </Route>
+          <Route path="/joinParty">
+            {user && token ? <JoinParty /> : <Login />}
+          </Route>
           <Route path="/homepage">
               {code && user && token ? <Homepage code={code} /> : <Login />}
+          </Route>
+          <Route path="/">
+              <h1>NOT FOUND</h1>
           </Route>
         </Switch>
       </Router>

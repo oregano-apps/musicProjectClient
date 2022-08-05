@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Topbar() {
 
@@ -16,7 +17,9 @@ function Topbar() {
                     <h1 className="topbar_title">regano Music</h1>
                 </div>
                 <div className="topbar_right">
-                    <button className="topbar_logout_button">Logout</button>
+                    <Link to="/login">
+                        <button className="topbar_logout_button">Logout</button>
+                    </Link>
                 </div>
         </div>
     )

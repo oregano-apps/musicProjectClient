@@ -1,4 +1,5 @@
 import React, {useState, useRef, useEffect, useContext} from 'react'
+import {Link} from 'react-router-dom'
 import BackspaceIcon from '@material-ui/icons/Backspace';
 import ControlPanel from '../../components/controlPanel/ControlPanel';
 import SearchSong from '../../components/searchSong/SearchSong';
@@ -85,7 +86,9 @@ function MusicPlayer() {
             <audio ref={audioRef} src={audioSource}>
             </audio>
             <section style={{backgroundImage: `linear-gradient(to right top,rgba(0,0,0, .6),rgba(0,0,0, .9)),url("${currentSong ? currentSong.backgroundPicture : null}")`}} className="musicPlayerTitleSection">
-                <BackspaceIcon className="musicPlayerBackButton" />
+                <Link to="/homepage">
+                    <BackspaceIcon className="musicPlayerBackButton" />
+                </Link>
                 <div className="musicPlayerTitleTop">
                     <img src={currentSong ? currentSong.backgroundPicture : "Song Name"} alt="" className="musicPlayerSongImage" />
                     <div className="musicPlayerTitleSongInfo">
